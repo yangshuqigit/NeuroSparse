@@ -28,15 +28,6 @@ WARM_UP = 50
 DIM = 64
 REVERSE = 0.8
 
-gdc = T.GDC(self_loop_weight=None,
-            normalization_in='sym',
-            normalization_out='col',
-            diffusion_kwargs=dict(method='ppr', alpha=0.05),
-            sparsification_kwargs=dict(method='topk', k=20, dim=0),
-            exact=True,
-            )
-
-
 class NeuroSparse(object):
     def __init__(self, in_channels, out_channels, num_site, ratio, alpha, n_epochs, lr, weight_decay, temperature,
                  site_adapt, augment, train_loader, val_loader, test_loader, threshold, l0, l1, l2, l3, pretrain_cl,
